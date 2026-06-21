@@ -1,4 +1,15 @@
 package com.hnys.bcd.core.service;
 
-public class UserService {
+import com.hnys.bcd.core.dto.UserDTO;
+import jakarta.ejb.Remote;
+
+import java.util.List;
+
+@Remote
+public interface UserService {
+    UserDTO getUserById(Long id);
+    void addUser(UserDTO userDTO);
+    void updateUser(UserDTO userDTO);
+    void deleteUser(Long id);
+    List<UserDTO> getUsers();
 }
